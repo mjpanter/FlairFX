@@ -1,847 +1,1239 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <!-- basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- site metas -->
-   <title>Flair Fx Academy</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- bootstrap css -->
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <!-- style css -->
-   <link rel="stylesheet" href="css/style.css">
-   <!-- Responsive-->
-   <link rel="stylesheet" href="css/responsive.css">
-   <link rel="stylesheet" href="css/owl.carousel.min.css">
-   <!-- fevicon -->
-   <link rel="icon" href="images/lengedFX/logo.jpeg" type="image/png">
-   <!-- Scrollbar Custom CSS -->
-   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-   <!-- Tweaks for older IEs-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flair FX Academy - Master Forex Trading</title>
+    <meta name="description" content="Professional Forex Trading Academy offering comprehensive mentorship, live sessions, and proven strategies for consistent trading success.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5aa0;
+            --accent-color: #f6ad55;
+            --success-color: #38a169;
+            --danger-color: #e53e3e;
+            --dark-color: #1a202c;
+            --light-color: #f7fafc;
+            --gray-100: #f7fafc;
+            --gray-200: #edf2f7;
+            --gray-300: #e2e8f0;
+            --gray-400: #cbd5e0;
+            --gray-500: #a0aec0;
+            --gray-600: #718096;
+            --gray-700: #4a5568;
+            --gray-800: #2d3748;
+            --gray-900: #1a202c;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
 
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            overflow-x: hidden;
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: white;
+        }
+
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .header.scrolled {
+            background: rgba(26, 54, 93, 0.98);
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #e69545;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Mobile Menu */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .highlight {
+            color: var(--accent-color);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: #e69545;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(246, 173, 85, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 14px 32px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 4rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: var(--gray-100);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--success-color);
+            font-weight: 500;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Mentorship Pricing */
+        .mentorship {
+            padding: 6rem 0;
+            background: var(--gray-100);
+        }
+
+        .mentorship-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .pricing-header h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--success-color);
+            margin: 1.5rem 0;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--gray-400);
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray-700);
+        }
+
+        .pricing-features i {
+            color: var(--success-color);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* WhatsApp Chat Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .whatsapp-button {
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-container,
+            .mentorship-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .whatsapp-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-200);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+    </style>
 </head>
 
-<body class="main-layout">
-   <!-- loader  -->
-   <div class="loader_bg">
-      <div class="loader">
-         <img src="images/lengedFX/logo.jpeg" alt="#" class="rotating-logo" />
-      </div>
-   </div>
-   <!-- end loader -->
-   <!-- header -->
-   <header>
-      <!-- header inner -->
-      <div class="header">
-         <div class="header_to d_none">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-6 col-sm-6">
-                     <ul class="lan">
-                        <li><i class="fa fa-globe" aria-hidden="true"></i> Language : <img src="images/fleg.png" alt="#" /></li>
-                     </ul>
-                     <form action="#">
-                        <div class="select-box">
-                           <label for="select-box1" class="label select-box1"><span class="label-desc">English</span> </label>
-                           <select id="select-box1" class="select">
-                              <option value="Choice 1">English</option>
-                           
-                           </select>
-                        </div>
-                     </form>
-                  </div>
-                  <div class="col-md-6 col-sm-6 ">
-                     <ul class="social_icon1">
-                        <li> Follow Us
-                        </li>
-                        <!-- YouTube Icon -->
-                        <li> <a href="https://youtube.com/@flairfx?si=M2jDtJjC1FW7m27y" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                        <!-- WhatsApp Icon -->
-                        <li> <a href="https://api.whatsapp.com/send?phone=27614942187" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
-                        <!-- Instagram Icon -->
-                        <li> <a href="https://instagram.com/flair.fx_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                        <!-- Telegram Icon -->
-                        <li>
-                           <a href="https://discord.gg/wR6bM368pJ" target="_blank" class="text-white hover:text-indigo-500 transition">
-                             <i class="fab fa-discord text-2xl"></i>
-                           </a>
-                         </li>
-                         
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="header_midil">
-            <div class="container">
-               <div class="row d_flex">
-                  <div class="col-md-4 col-sm-4 d_none">
-                     <ul class="conta_icon">
-                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Call Us : +27 61 4942187</a> </li>
-                     </ul>
-                  </div>
-                  <div class="col-md-4 col-sm-4 ">
-                     <a class="logo2" href="#"><img src="images/lengedFX/bg remove/logo.jpeg" alt="#" /><H1 class="gg">Flair<span class="ff">FX</span><span class="fff">Academy</span></H1></a>
-                  </div>
-                  <div class="col-md-4 col-sm-4 d_none">
-                     <ul class="conta_icon ">
-                        <li><a href="#" class="qq"><i class="fa fa-envelope" aria-hidden="true"></i>Flairfxtrading@gmail.com</a> </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="header_bo">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-9 col-sm-7">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                           <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                           <ul class="navbar-nav mr-auto">
-                              <li class="nav-item active">
-                                 <a class="nav-link" href="index.html"> Home </a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="about.html">About</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="service.html">Services</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="team.html"> Books</a>
-                              </li>
-                             
-                          
-                           </ul>
-                        </div>
-                     </nav>
-                  </div>
-                  <div class="col-md-3 col-sm-5 d_none">
-                     <ul class="sign">
-                        <li><a href="#"></a></li>
-                        <li><a class="sign_btn" href="https://selar.com/12y18k" target="_blank">Sign Up</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </header>
-   <!-- end header inner -->
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo" style="background: var(--accent-color); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold;">FX</div>
+            <p>Loading Flair FX Academy...</p>
+        </div>
+    </div>
 
-
-
-   <!-- end header -->
-   <section class="banner_main">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-7 col-lg-7">
-               <div class="text-bg">
-                  <h1>Master the Art of Trading with Us!<br>Professional Advisers</h1>
-                  <span>for your Trading carrer</span>
-                  <p>Became a professional Forex Trader in shorts term</p>
-                  <a href="#">About us</a>
-               </div>
-            </div>
-            <div class="col-md-5 col-lg-5">
-               <div class="ban_img">
-                  <figure><img src="images/lengedFX/bg remove/boss4.png" alt="#" style="box-shadow: ;"/></figure>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <!-- end banner -->
-   <!-- about section -->
-   <div id="about" class="about">
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-md-12 col-lg-7">
-                  <div class="about_box">
-                      <div class="titlepage">
-                          <h2><strong class="yellow">About Us</strong><br>Welcome to Flair Fx Academy</h2>
-                      </div>
-                      <div class="about_text">
-
-                        <p style="font-size: 17px; line-height: 1.7;">
-                           <strong>FlairFX Academy</strong> is a mentorship program designed to guide traders at all levels — from beginners to advanced — towards mastery. The academy is built on the foundation of helping traders elevate their skillset, deepen their understanding of trading psychology, and apply effective risk management.
-                     
-               
-                           Our focus is on developing a systematic approach to trading, allowing members to break free from emotional, inconsistent trading patterns and instead build real, long-term consistency.
-                       
-                           We don’t just send out signals and setups. Instead, we host <strong>live sessions twice a week</strong>, allowing our members to actively engage with the market in real-time and develop their own trading edge. While we do share around two trade setups per week, the priority is always learning, growth, and becoming <strong>independent as a trader</strong>.
-                        </p>
-                     </div>
-                      <span class="try">TRY OUR FOREX TRADING BOOKS</span>
-                      <a class="read_morea" href="team.html">Get the books <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                  </div>
-              </div>
-  
-             <!-- YouTube Video Embed -->
-<div class="col-md-12 col-lg-5" style="display: flex; justify-content: center; align-items: center; padding: 20px;">
-   <iframe width="100%" height="315" 
-       src="https://www.youtube.com/embed/8gksdt02GvQ" 
-       frameborder="0" 
-       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-       allowfullscreen 
-       style="border-radius: 8px;">
-   </iframe>
-</div>
-
-          
-          </div>
-      </div>
-  </div>
-  
-  
-   <!-- about section -->
-   <!-- service section -->
-
-               <section style="padding: 70px 0; background: white;">
-                  <div class="container text-center">
-                     <h2 style="color: #082557; margin-bottom: 40px;">Our Core Values</h2>
-                     <div class="row">
-                        <div class="col-md-4">
-                           <i class="fas fa-brain fa-3x" style="color: #082557;"></i>
-                           <h4 style="margin-top: 20px;">Psychology Mastery</h4>
-                           <p>Understand your mindset and make decisions with clarity and control.</p>
-                        </div>
-                        <div class="col-md-4">
-                           <i class="fas fa-chart-line fa-3x" style="color: #082557;"></i>
-                           <h4 style="margin-top: 20px;">Consistency</h4>
-                           <p>Build a trading edge through routine, risk control, and strategy execution.</p>
-                        </div>
-                        <div class="col-md-4">
-                           <i class="fas fa-users fa-3x" style="color: #082557;"></i>
-                           <h4 style="margin-top: 20px;">Community</h4>
-                           <p>Grow with a community that supports, motivates, and evolves together.</p>
-                        </div>
-                     </div>
-                  </div>
-               </section>
-<!-- Mentorship Program Section -->
-<section id="mentorship" class="mentorship" style="padding: 60px 0; background-color: #f9f9f9;">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-6">
-            <h2 style="font-size: 28px; font-weight: bold; color: #333;">Our Mentorship Pricing</h2>
-            <p style="font-size: 16px; color: #555;">Join our comprehensive mentorship program designed to guide you through the world of Forex trading. With personalized support and expert insights, you can elevate your trading skills.</p>
-            <ul style="color: #555; list-style-type: none; padding: 0;">
-               <li>2 Weekly Sessions</li>
-               <li>Private Mentorship Group</li>
-               <li>Pre-Recorded Sessions</li>
-               <li>Market Breakdowns</li>
-               <li>Flair FX Full Strategies (Intraday & Swing)</li>
-               <li>Psychology & Risk Management</li>
-               <li>Prop Firm Guidance</li>
-            </ul>
-            <h3 style="font-size: 24px; color: #e74c3c;">
-               <span style="text-decoration: line-through; color: #999;">$49</span> <strong>$29</strong>
-            </h3>
-            <a href="https://selar.com/12y18k" class="btn btn-primary" style="margin-top: 20px;" target="_blank">Yes Give Me Access Now!</a>
-         </div>
-         <div class="col-md-6">
-            <img src="images/WhatsApp Image 2025-04-19 at 6.00.05 PM (1).jpeg" alt="Mentorship Program" style="width: 100%; border-radius: 8px;margin-top: 45px;">
-         </div>
-      </div>
-   </div>
-</section>
-<!-- End Mentorship Program Section -->
-<!-- End Mentorship Program Section -->
-   <!-- service section -->
-
-      <!-- <div class="portfolio">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12 ">
-               <div class="titlepage">
-                  <h2><strong class="yellow">PORTFOLIO</strong><br> CHOOSE TO BE A PROFESSIONAL IN FOREX TRADING</h2>
-                  <span>Forex</span>
-                  <p>Explore our portfolio to see the successful Trading we've made.</p>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div id="myCarousel" class="carousel slide portfolio_Carousel " data-ride="carousel">
-         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-         </ol>
-         <div class="carousel-inner">
-            <div class="carousel-item active">
-               <div class="container">
-                  <div class="carousel-caption ">
-                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/action5.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/WhatsApp Image 2024-12-17 at 10.48.19 PM.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/WhatsApp Image 2024-12-17 at 10.48.19 PM (1).jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/WhatsApp Image 2024-12-17 at 10.48.21 PM.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                      
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <br><div class="join-buttons">
-               <a href="https://chat.whatsapp.com/Drq5G9GbI5W6xrrSIT6rMS" target="_blank" class="join-btn whatsapp-btn">
-                   <i class="fa fa-whatsapp"></i> Join WhatsApp Group
-               </a>
-               <a href="https://t.me/legendfxrw" target="_blank" class="join-btn telegram-btn">
-                   <i class="fa fa-telegram"></i> Join Telegram Channel
-               </a>
-           </div>
-           <br>
-            <div class="carousel-item">
-               <div class="container">
-                  <div class="carousel-caption">
-                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/WhatsApp Image 2024-12-17 at 10.48.23 PM.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/action1.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/action2.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/action3.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-12">
-                           <a class="read_more" href="#">Read More</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="carousel-item">
-               <div class="container">
-                  <div class="carousel-caption">
-                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/action4.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/action5.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/boss4.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="portfolio_img">
-                              <img src="images/lengedFX/boss6.jpg" alt="#" />
-                              <div class="middle">
-                                 <div class="text2">View More</div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-12">
-                           <a class="read_more" href="#">Read More</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-         </a>
-         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-         </a>
-      </div>
-   </div>
-   <!-- end portfolio section -->
-   <!-- Forex Trading Journey section -->
-   <section class="banner_main">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-7 col-lg-7">
-                  <div class="text-bg">
-                      <h1><br> Unlock Your Trading Potential!</h1>
-                      <span>For Your Trading Career</span>
-                      <p>Become a profitable Forex trader and join the 10% who are consistently successful in the market. Learn the strategies and techniques that set top traders apart from the  using Flair Fx Academy.</p>
-                      <a href="about.html">About Us</a>
-                  </div>
-              </div>
-              <div class="col-md-5 col-lg-5">
-                  <div class="ban_img">
-                      <figure><img src="images/lengedFX/bg remove/WhatsApp Image 2025-04-19 at 2.54.39 PM.jpeg" alt="Forex Trading" /></figure>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  
-  <div id="team" class="team">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-12">
-            <div class="titlepage">
-               <h2><strong class="yellow">Buy Books</strong>
-            </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div id="teamCarousel" class="carousel slide team_Carousel" data-ride="carousel">
-               <ol class="carousel-indicators">
-                  <li data-target="#teamCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#teamCarousel" data-slide-to="1"></li>
-                  <li data-target="#teamCarousel" data-slide-to="2"></li>
-               </ol>
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <div class="container">
-                        <div class="carousel-caption">
-                           <div class="row">
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/team1.jpeg" alt="Book 1" style="width: 220px; height: 300px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);" />
-                                    <h5 style="text-align: center;">Professional Forex Trading</h5>
-                                    <p style="text-align: center;">A comprehensive guide to mastering forex trading strategies and techniques.</p>
-                                    <div class="ho_socal" style="width: 220px; height: 300px;">
-                                       <ul class="social_icont">
-                                          <a href="https://selar.com/f5e708" target="_blank" download>
-                                             <button class="mm" style="border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Pay <span style="color: red;">15</span>$</button>
-                                          </a>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/team2.jpeg" alt="Book 2" style="width: 220px; height: 300px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);" />
-                                    <h5 style="text-align: center;">Market Reversal Patterns</h5>
-                                    <p style="text-align: center;">Learn to identify key reversal patterns that can change market trends.</p>
-                                    <div class="ho_socal" style="width: 220px; height: 300px;">
-                                       <ul class="social_icont">
-                                          <a href="https://selar.com/f5e708" target="_blank" download>
-                                             <button class="mm" style="border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Pay <span style="color: red;">15</span>$</button>
-                                          </a>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6">
-                                 <div id="ho_bg" class="team_img">
-                                    <img src="images/team3.jpeg" alt="Book 3" style="width: 220px; height: 300px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);" />
-                                    <h5 style="text-align: center;">Forex Trading for Beginners</h5>
-                                    <p style="text-align: center;">A step-by-step guide for beginners to start trading in the forex market.</p>
-                                    <div class="ho_socal" style="width: 220px; height: 300px;">
-                                       <ul class="social_icont">
-                                          <a href="https://selar.com/f5e708" target="_blank" download>
-                                             <button class="mm" style="border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Pay <span style="color: red;">15</span>$</button>
-                                          </a>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<br>
-<br><br><a href="team.html" style="color: white; font-weight: bold; font-size: 20px; text-decoration: none; display: inline-block; margin-left: 40%;">
-   <button style="width: 300px; height: 40px; background-color: rgb(21, 0, 214); border: none; border-radius: 5px; cursor: pointer; color: white; font-size: 16px; font-weight: bold; transition: background-color 0.3s;"
-      onmouseover="this.style.backgroundColor='black';"
-      onmouseout="this.style.backgroundColor='rgb(21, 0, 214)';">
-      Get more books
-   </button>
-</a>
-<br><br>
-
-<!-- contact section -->
-
-<!-- FAQ Section -->
-<section id="faq" class="faq" style="padding: 60px 0; background-color: #f9f9f9;">
-   <div class="container">
-      <h2 style="font-size: 28px; font-weight: bold; color: #333; text-align: center;">Frequently Asked Questions (FAQ)</h2>
-      <div class="accordion" id="faqAccordion">
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingOne">
-               <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     Is this a once-off mentorship?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
-               <div class="card-body">
-                  No, this is not a once-off mentorship. Once you join, you have lifetime access to the mentorship content and community.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingTwo">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     How long does the mentorship last?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
-               <div class="card-body">
-                  The mentorship is lifetime access. You pay once and get ongoing value for as long as the program exists.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingThree">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     What strategy do you teach?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
-               <div class="card-body">
-                  I’m an SMC (Smart Money Concepts) trader with a focus on swing trading. You’ll learn how to apply these strategies to catch high-probability setups in the market.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingFour">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     What does the course come with?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
-               <div class="card-body">
-                  The mentorship includes:
-                  <ul>
-                     <li>An intraday strategy for short-term trades</li>
-                     <li>A swing trading strategy for longer holds</li>
-                     <li>A gold-specific strategy tailored to XAUUSD</li>
-                     <li>Live sessions every Wednesday and Sunday for market breakdowns, lessons, and Q&A</li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingFive">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     Do I get access to live sessions?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
-               <div class="card-body">
-                  Yes, we host live sessions twice a week—every Wednesday and Sunday. You’ll also get access to the session replays if you can’t attend live.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingSix">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     Is this mentorship suitable for beginners?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqAccordion">
-               <div class="card-body">
-                  Yes, the mentorship is beginner-friendly and also suitable for intermediate and advanced traders. Everything is broken down clearly, and support is available throughout your journey.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingSeven">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     What platform do you trade on?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqAccordion">
-               <div class="card-body">
-                  I trade on MetaTrader using price action and SMC strategies. The methods can be applied to most major trading platforms.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingEight">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     Will I get one-on-one support?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqAccordion">
-               <div class="card-body">
-                  Yes, you’ll have access to mentorship support and guidance through our private group and mentorship sessions.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingNine">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     Is there a refund policy?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqAccordion">
-               <div class="card-body">
-                  Due to the nature of digital content and instant access, we do not offer refunds. Please make sure you’re ready to commit before signing up.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingTen">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     Can I join from any country?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#faqAccordion">
-               <div class="card-body">
-                  Yes, the mentorship is fully online and open to traders worldwide.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingEleven">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     How do I access the course after payment?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#faqAccordion">
-               <div class="card-body">
-                  Once your payment is confirmed, you’ll receive an email with your login details and immediate access to the course platform.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingTwelve">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     Can I still join if I have a full-time job or limited time?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#faqAccordion">
-               <div class="card-body">
-                  Absolutely. You can learn at your own pace and watch the replays of live sessions whenever it’s convenient for you.
-               </div>
-            </div>
-         </div>
-         <div class="card" style="margin-bottom: 10px;">
-            <div class="card-header" id="headingThirteen">
-               <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen" style="text-align: left; width: 100%; background: none; border: none; font-size: 18px; color: #333;">
-                     Do I need a laptop to start trading?
-                     <span class="icon" style="float: right;">&#x25B6;</span>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#faqAccordion">
-               <div class="card-body">
-                  No, you don’t need a laptop. You can trade directly from your phone using apps like MetaTrader. A laptop is helpful but not required to start.
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
-<!-- End FAQ Section -->
-
-<!-- Include Bootstrap JS (optional, for dropdown functionality) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- 
-   <div class="whatsapp-chat">
-      <i class="fa fa-whatsapp"></i>
-  </div>
-  
-  <div class="chat-box" id="chatBox">
-      <div class="chat-header">
-          <span>WhatsApp Chat</span>
-          <button id="closeChat">&times;</button>
-      </div>
-      <div class="chat-body">
-          <p>Hello! How can I help you?</p>
-      </div>
-      <div class="chat-footer">
-          <input type="text" id="chatInput" placeholder="Type your message..." />
-          <button id="sendChat">Send</button>
-      </div>
-  </div>
-  
-<!-- Footer -->
-<footer style="background-color: #082557; color: white; padding: 20px 0;">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-4 text-center">
-            <a class="logo2" href="#">
-               <img src="images/lengedFX/bg remove/logo.jpeg" alt="Flair FX Academy" style="width: 150px;" />
-               <h1 class="ggg" style="font-size: 24px;">Flair<span class="ff">FX</span><span class="ffff">Academy</span></h1>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <div style="width: 40px; height: 40px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">FX</div>
+                <span>Flair<span style="color: var(--accent-color);">FX</span> Academy</span>
             </a>
-         </div>
-         <div class="col-md-4">
-            <h3 style="font-size: 18px;">Contact Us</h3>
-            <ul class="location_icon" style="list-style: none; padding: 0;">
-               <li><i class="fa fa-map-marker" aria-hidden="true"></i> Serengeti, Gauteng –Kempton park 10 Roam Crescent, South Africa</li>
-               <li><i class="fa fa-envelope" aria-hidden="true"></i> Flairfxtrading@gmail.com</li>
-               <li><i class="fa fa-volume-control-phone" aria-hidden="true"></i> +27 61 4942187</li>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#mentorship" class="nav-link">Mentorship</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="https://selar.com/12y18k" class="cta-button" target="_blank">Join Now</a></li>
             </ul>
-         </div>
-         <div class="col-md-4">
-            <h3 style="font-size: 18px;">Menus</h3>
-            <ul class="link_icon" style="list-style: none; padding: 0;">
-               <li><a href="index.html" style="color: white;">Home</a></li>
-               <li><a href="about.html" style="color: white;">About Us</a></li>
-               <li><a href="service.html" style="color: white;">Services</a></li>
-               <li><a href="team.html" style="color: white;">Buy Books</a></li>
-               <li><a href="contact.html" style="color: white;">Contact Us</a></li>
-            </ul>
-         </div>
-      </div>
-      <div class="disclaimer" style="text-align: center; margin-top: 20px; font-size: 14px;">
-         <p style="margin: 0;"><u><b>DISCLAIMER:</b></u> All information provided on this website is for educational purposes only and does not constitute financial or investment advice. Flair Fx Academy does not operate as a broker, accept deposits, or provide access to live trading accounts. Our tools and resources are designed to help users learn about trading concepts in a supportive learning environment.</p>
-      </div>
-      <div class="copyright" style="text-align: center; margin-top: 10px;">
-         <p style="margin: 0;">Copyright © 2025 Flair Fx Academy. Developed by muhirejeanleonard2@gmail.com.</p>
-      </div>
-   </div>
-</footer>
-<!-- End Footer -->
-<!-- End Footer -->
-<!-- Javascript files-->
-<script>
-   document.addEventListener("DOMContentLoaded", function() {
-       const chatButton = document.querySelector(".whatsapp-chat");
-       const chatBox = document.getElementById("chatBox");
-       const closeChat = document.getElementById("closeChat");
-       const sendChat = document.getElementById("sendChat");
-       const chatInput = document.getElementById("chatInput");
 
-       chatButton.addEventListener("click", function() {
-           chatBox.style.display = "flex";
-       });
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-       closeChat.addEventListener("click", function() {
-           chatBox.style.display = "none";
-       });
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Master the Art of <span class="highlight">Forex Trading</span></h1>
+                <p>Transform from a struggling trader to a consistent profit maker with our proven mentorship program. Join the elite 10% of successful traders.</p>
+                <div class="hero-buttons">
+                    <a href="#mentorship" class="btn-primary">
+                        Start Your Journey
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='%23f6ad55' rx='20'/><text x='200' y='150' text-anchor='middle' dy='.3em' font-family='Arial' font-size='24' fill='white'>Trading Success</text></svg>" alt="Trading Success" class="hero-image">
+            </div>
+        </div>
+    </section>
 
-       sendChat.addEventListener("click", function() {
-           let message = chatInput.value;
-           if (message.trim() !== "") {
-               window.open(`https://api.whatsapp.com/send?phone=27614942187&text=${encodeURIComponent(message)}`, "_blank");
-               chatInput.value = "";
-           }
-       });
-   });
-</script>
- </script>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<!-- Sidebar -->
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/custom.js"></script>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Students Trained</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">85%</span>
+                <span class="stat-label">Success Rate</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Welcome to Flair FX Academy</h2>
+                <p><strong>FlairFX Academy</strong> is a comprehensive mentorship program designed to guide traders at all levels — from beginners to advanced — towards mastery. We focus on developing systematic approaches to trading, helping you break free from emotional, inconsistent patterns.</p>
+                
+                <p>Our academy is built on three core principles: psychology mastery, consistent strategy execution, and community support. We don't just send signals — we teach you to become an independent, profitable trader.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Live Trading Sessions</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Proven Strategies</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Risk Management</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Psychology Training</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/8gksdt02GvQ" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Core Values</h2>
+            <p>Built on the foundation of excellence, integrity, and results</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Psychology Mastery</h3>
+                <p>Understand your mindset and make decisions with clarity and control. Master the mental game that separates winners from losers.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Consistency</h3>
+                <p>Build a trading edge through routine, risk control, and strategy execution. Develop the discipline for long-term success.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Community</h3>
+                <p>Grow with a community that supports, motivates, and evolves together. Network with like-minded traders on the same journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentorship Section -->
+    <section class="mentorship" id="mentorship">
+        <div class="mentorship-container">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Complete Mentorship Program</h3>
+                    <p>Everything you need to become a successful forex trader</p>
+                </div>
+                
+                <div class="pricing-price">
+                    <span class="price-old">$49</span>
+                    <span>$29</span>
+                </div>
+
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> 2 Weekly Live Sessions</li>
+                    <li><i class="fas fa-check"></i> Private Mentorship Group</li>
+                    <li><i class="fas fa-check"></i> Pre-Recorded Sessions Library</li>
+                    <li><i class="fas fa-check"></i> Market Breakdown Analysis</li>
+                    <li><i class="fas fa-check"></i> Complete Trading Strategies</li>
+                    <li><i class="fas fa-check"></i> Psychology & Risk Management</li>
+                    <li><i class="fas fa-check"></i> Prop Firm Guidance</li>
+                    <li><i class="fas fa-check"></i> Lifetime Access</li>
+                </ul>
+
+                <a href="https://selar.com/12y18k" class="btn-primary" target="_blank" style="width: 100%; text-align: center; margin-top: 2rem;">
+                    Yes, Give Me Access Now!
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="mentorship-visual">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='%232d5aa0' rx='15'/><circle cx='120' cy='100' r='30' fill='%23f6ad55'/><circle cx='280' cy='100' r='25' fill='%23f6ad55'/><rect x='50' y='180' width='300' height='80' fill='%23f6ad55' rx='10'/><text x='200' y='220' text-anchor='middle' dy='.3em' font-family='Arial' font-size='18' fill='white'>Live Trading Sessions</text></svg>" alt="Mentorship Program" style="width: 100%; border-radius: 15px; box-shadow: var(--shadow-xl);">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Get answers to the most common questions about our mentorship program</p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is this a once-off mentorship?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    No, this is not a once-off mentorship. Once you join, you have lifetime access to the mentorship content and community.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How long does the mentorship last?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    The mentorship is lifetime access. You pay once and get ongoing value for as long as the program exists.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What strategy do you teach?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    I'm an SMC (Smart Money Concepts) trader with a focus on swing trading. You'll learn how to apply these strategies to catch high-probability setups in the market.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What does the course come with?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    The mentorship includes an intraday strategy for short-term trades, a swing trading strategy for longer holds, a gold-specific strategy tailored to XAUUSD, and live sessions every Wednesday and Sunday for market breakdowns, lessons, and Q&A.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is this mentorship suitable for beginners?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    Yes, the mentorship is beginner-friendly and also suitable for intermediate and advanced traders. Everything is broken down clearly, and support is available throughout your journey.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Will I get one-on-one support?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    Yes, you'll have access to mentorship support and guidance through our private group and mentorship sessions.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo" style="margin-bottom: 1.5rem;">
+                    <div style="width: 40px; height: 40px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">FX</div>
+                    <span>Flair<span style="color: var(--accent-color);">FX</span> Academy</span>
+                </div>
+                <p>Master the art of forex trading with professional guidance and proven strategies.</p>
+                <div class="social-links">
+                    <a href="https://youtube.com/@flairfx?si=M2jDtJjC1FW7m27y" target="_blank" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=27614942187" target="_blank" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/flair.fx_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://discord.gg/wR6bM368pJ" target="_blank" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#mentorship">Mentorship</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Serengeti, Gauteng – Kempton Park</li>
+                    <li><i class="fas fa-phone"></i> +27 61 4942187</li>
+                    <li><i class="fas fa-envelope"></i> Flairfxtrading@gmail.com</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Trading Resources</h3>
+                <ul>
+                    <li><a href="#">Trading Books</a></li>
+                    <li><a href="#">Market Analysis</a></li>
+                    <li><a href="#">Educational Videos</a></li>
+                    <li><a href="#">Trading Tools</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; margin-top: 2rem;">
+                <p><strong>DISCLAIMER:</strong> All information provided on this website is for educational purposes only and does not constitute financial or investment advice. Flair Fx Academy does not operate as a broker, accept deposits, or provide access to live trading accounts.</p>
+                <p style="margin-top: 1rem;">Copyright © 2025 Flair Fx Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <a href="https://api.whatsapp.com/send?phone=27614942187&text=Hi! I'm interested in learning more about your forex mentorship program." target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Close mobile menu if open
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    document.querySelector('.mobile-toggle i').classList.remove('fa-times');
+                    document.querySelector('.mobile-toggle i').classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .stat-item, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
