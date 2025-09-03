@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlairFX Academy - Elite Forex Trading Mastery</title>
-    <meta name="description" content="Elite Forex Trading Academy offering comprehensive mentorship, live sessions, and proven strategies for consistent trading success.">
+    <title>ClassyFX Academy - Elite Forex Trading Mastery</title>
+    <meta name="description" content="Elite Forex Trading Academy offering comprehensive mentorship, VIP signals, and proven strategies for consistent trading success.">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
@@ -32,14 +32,18 @@
             --midnight: #0c0c0c;
             --charcoal: #2c2c2c;
             --silver: #c0c0c0;
+            --royal-purple: #6366f1;
+            --emerald: #059669;
             
-            /* Gradients */
+            /* Advanced Gradients */
             --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             --gradient-gold: linear-gradient(135deg, #ffd700 0%, #ffb347 50%, #ff8c00 100%);
             --gradient-platinum: linear-gradient(135deg, #e5e4e2 0%, #c0c0c0 50%, #a8a8a8 100%);
             --gradient-electric: linear-gradient(135deg, #00d4ff 0%, #0ea5e9 50%, #0284c7 100%);
             --gradient-midnight: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             --gradient-aurora: linear-gradient(135deg, #ff006e 0%, #8338ec 25%, #3a86ff 50%, #06ffa5 75%, #ffbe0b 100%);
+            --gradient-royal: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            --gradient-emerald: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
             
             /* Advanced Shadows */
             --shadow-glow: 0 0 20px rgba(6, 182, 212, 0.4);
@@ -47,6 +51,7 @@
             --shadow-floating: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
             --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
             --shadow-crisp: 0 4px 20px rgba(0, 0, 0, 0.12);
+            --shadow-neon: 0 0 30px rgba(255, 215, 0, 0.6);
             
             /* Animation Variables */
             --animation-speed: 0.6s;
@@ -90,7 +95,7 @@
         .loader-logo {
             width: 120px;
             height: 120px;
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -153,12 +158,12 @@
             transition: width 0.25s ease;
         }
 
-        /* Interactive Cursor (Desktop only) */
+        /* Interactive Cursor */
         .interactive-cursor {
             position: fixed;
             width: 20px;
             height: 20px;
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9998;
@@ -210,7 +215,7 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             color: white;
             text-decoration: none;
             font-weight: 800;
@@ -224,22 +229,41 @@
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-gold);
-            border-radius: 12px;
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-royal);
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: 1rem;
+            font-size: 1.1rem;
             box-shadow: var(--shadow-crisp);
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient-gold);
+            border-radius: 17px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover .logo-icon::before {
+            opacity: 1;
         }
 
         .logo:hover .logo-icon {
             transform: rotate(5deg) scale(1.05);
-            box-shadow: var(--shadow-glow);
+            box-shadow: var(--shadow-neon);
         }
 
         .nav-menu {
@@ -271,7 +295,7 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: var(--gradient-electric);
+            background: var(--gradient-royal);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -281,10 +305,10 @@
         }
 
         .nav-cta {
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 12px 24px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
@@ -353,7 +377,7 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
                 linear-gradient(45deg, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
         }
@@ -378,7 +402,7 @@
         }
 
         .particle:nth-child(odd) {
-            background: var(--gold);
+            background: var(--royal-purple);
             animation-delay: -3s;
         }
 
@@ -387,6 +411,7 @@
         .particle:nth-child(3) { top: 80%; left: 30%; animation-duration: 10s; }
         .particle:nth-child(4) { top: 10%; left: 70%; animation-duration: 7s; }
         .particle:nth-child(5) { top: 60%; left: 10%; animation-duration: 9s; }
+        .particle:nth-child(6) { top: 30%; left: 90%; animation-duration: 7s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) scale(1); opacity: 0.6; }
@@ -408,8 +433,8 @@
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 8vw, 4.5rem);
-            font-weight: 800;
+            font-size: clamp(2.2rem, 8vw, 5rem);
+            font-weight: 900;
             color: white;
             margin-bottom: 1.5rem;
             line-height: 1.1;
@@ -417,7 +442,7 @@
         }
 
         .hero-content .highlight {
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -425,17 +450,17 @@
         }
 
         .hero-content .accent {
-            color: var(--electric-blue);
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
 
         .hero-subtitle {
-            font-size: clamp(1rem, 4vw, 1.3rem);
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
             line-height: 1.6;
             font-weight: 400;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -445,27 +470,27 @@
             gap: 1rem;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .btn-hero-primary {
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             color: white;
-            padding: 16px 30px;
-            border-radius: 35px;
+            padding: 18px 35px;
+            border-radius: 40px;
             text-decoration: none;
             font-weight: 700;
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            font-size: clamp(1rem, 3vw, 1.2rem);
             transition: all 0.4s var(--animation-curve);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             box-shadow: var(--shadow-premium);
             position: relative;
             overflow: hidden;
             width: 100%;
-            max-width: 280px;
+            max-width: 320px;
             text-align: center;
         }
 
@@ -490,38 +515,38 @@
         }
 
         .btn-hero-secondary {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--electric-blue);
-            padding: 16px 30px;
-            border: 2px solid rgba(0, 212, 255, 0.3);
-            border-radius: 35px;
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--gold);
+            padding: 18px 35px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            font-size: clamp(1rem, 3vw, 1.2rem);
             transition: all 0.4s ease;
             backdrop-filter: blur(20px);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
-            max-width: 280px;
+            max-width: 320px;
             text-align: center;
         }
 
         .btn-hero-secondary:hover {
-            background: rgba(0, 212, 255, 0.2);
-            border-color: var(--electric-blue);
+            background: rgba(255, 215, 0, 0.2);
+            border-color: var(--gold);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
+            box-shadow: var(--shadow-neon);
         }
 
         .hero-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
-            max-width: 500px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -531,16 +556,16 @@
         }
 
         .hero-stat-number {
-            font-size: clamp(1.8rem, 6vw, 2.2rem);
+            font-size: clamp(2rem, 6vw, 2.5rem);
             font-weight: 900;
-            color: var(--gold);
+            color: var(--royal-purple);
             display: block;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
         }
 
         .hero-stat-label {
             color: rgba(255, 255, 255, 0.7);
-            font-size: clamp(0.8rem, 3vw, 0.9rem);
+            font-size: clamp(0.85rem, 3vw, 1rem);
             font-weight: 500;
         }
 
@@ -552,22 +577,26 @@
             order: -1;
         }
 
-        .hero-image-container {
-            position: relative;
+        .hero-banner {
             width: 100%;
-            max-width: 400px;
-        }
-
-        .hero-image {
-            width: 100%;
+            max-width: 500px;
+            height: 350px;
             border-radius: 25px;
             box-shadow: var(--shadow-floating);
             animation: heroFloat 8s ease-in-out infinite;
             position: relative;
             z-index: 2;
+            background: var(--gradient-royal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
         }
 
-        .hero-image::before {
+        .hero-banner::before {
             content: '';
             position: absolute;
             top: -20px;
@@ -582,11 +611,57 @@
             animation: auraShift 10s ease-in-out infinite;
         }
 
+        .banner-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-neon);
+        }
+
+        .banner-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .banner-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .banner-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .banner-feature {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: white;
+            font-weight: 600;
+        }
+
         @keyframes heroFloat {
             0%, 100% { transform: translateY(0px) rotateY(0deg); }
-            25% { transform: translateY(-15px) rotateY(5deg); }
+            25% { transform: translateY(-15px) rotateY(2deg); }
             50% { transform: translateY(-20px) rotateY(0deg); }
-            75% { transform: translateY(-10px) rotateY(-5deg); }
+            75% { transform: translateY(-10px) rotateY(-2deg); }
         }
 
         @keyframes auraShift {
@@ -598,7 +673,7 @@
         .stats {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
             backdrop-filter: blur(20px);
-            padding: 4rem 0;
+            padding: 5rem 0;
             position: relative;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -609,15 +684,15 @@
             margin: 0 auto;
             padding: 0 1rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
         }
 
         .stat-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
-            padding: 2.5rem 1.5rem;
-            border-radius: 25px;
+            padding: 3rem 2rem;
+            border-radius: 30px;
             text-align: center;
             transition: all 0.4s var(--animation-curve);
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -633,24 +708,24 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
         }
 
         .stat-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-12px) scale(1.02);
             box-shadow: var(--shadow-floating);
         }
 
         .stat-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-electric);
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-royal);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
             color: white;
             box-shadow: var(--shadow-glow);
             transition: all 0.3s ease;
@@ -661,9 +736,9 @@
         }
 
         .stat-number {
-            font-size: clamp(2rem, 6vw, 3rem);
+            font-size: clamp(2.2rem, 6vw, 3.2rem);
             font-weight: 900;
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -674,17 +749,17 @@
         .stat-label {
             color: var(--charcoal);
             font-weight: 600;
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            font-size: clamp(1rem, 3vw, 1.2rem);
         }
 
-        /* About Section */
-        .about {
+        /* Services Section */
+        .services {
             padding: 6rem 0;
             background: var(--midnight);
             position: relative;
         }
 
-        .about::before {
+        .services::before {
             content: '';
             position: absolute;
             top: 0;
@@ -692,105 +767,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
-        }
-
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center;
-            position: relative;
-            text-align: center;
-        }
-
-        .about-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 6vw, 3rem);
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-        }
-
-        .about-content p {
-            font-size: clamp(1rem, 3vw, 1.2rem);
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            justify-content: center;
-        }
-
-        .feature-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            color: var(--gold);
-            font-size: 1.3rem;
-        }
-
-        .feature-text {
-            color: white;
-            font-weight: 600;
-            font-size: clamp(0.9rem, 3vw, 1rem);
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: var(--shadow-floating);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 280px;
-            border: none;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
-            position: relative;
+                radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
         }
 
         .section-header {
@@ -802,18 +780,22 @@
 
         .section-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            color: var(--primary-color);
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            background: var(--gradient-royal);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
             position: relative;
+            font-weight: 900;
         }
 
         .section-header h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
-            width: 80px;
+            width: 100px;
             height: 4px;
             background: var(--gradient-gold);
             transform: translateX(-50%);
@@ -821,11 +803,10 @@
         }
 
         .section-header p {
-            font-size: clamp(1rem, 3vw, 1.3rem);
-            color: var(--charcoal);
-            max-width: 700px;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: rgba(255,255,255,0.8);
+            max-width: 800px;
             margin: 0 auto;
-            opacity: 0.8;
         }
 
         .services-grid {
@@ -833,18 +814,18 @@
             margin: 0 auto;
             padding: 0 1rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
-            padding: 2.5rem 2rem;
+            padding: 3rem 2.5rem;
             border-radius: 30px;
             text-align: center;
             transition: all 0.4s var(--animation-curve);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: var(--shadow-crisp);
             position: relative;
             overflow: hidden;
@@ -857,7 +838,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: var(--gradient-aurora);
+            background: var(--gradient-royal);
             opacity: 0;
             transition: all 0.6s ease;
         }
@@ -870,18 +851,19 @@
         .service-card:hover {
             transform: translateY(-15px) scale(1.02);
             box-shadow: var(--shadow-floating);
+            border-color: rgba(99, 102, 241, 0.3);
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-electric);
+            width: 90px;
+            height: 90px;
+            background: var(--gradient-royal);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
+            margin: 0 auto 2rem;
+            font-size: 2.2rem;
             color: white;
             box-shadow: var(--shadow-glow);
             transition: all 0.4s ease;
@@ -895,166 +877,164 @@
         }
 
         .service-card h3 {
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            font-size: clamp(1.4rem, 4vw, 1.9rem);
+            color: white;
+            margin-bottom: 1.5rem;
             font-weight: 700;
             position: relative;
             z-index: 2;
         }
 
         .service-card p {
-            color: var(--charcoal);
+            color: rgba(255,255,255,0.8);
             line-height: 1.7;
-            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            font-size: clamp(1rem, 3vw, 1.1rem);
             position: relative;
             z-index: 2;
         }
 
-        /* Premium Mentorship Section */
-        .mentorship {
+        /* Premium Pricing Section */
+        .pricing {
             padding: 6rem 0;
-            background: var(--gradient-midnight);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
             position: relative;
-            overflow: hidden;
         }
 
-        .mentorship::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
-        }
-
-        .mentorship-container {
+        .pricing-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 1rem;
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center;
-            position: relative;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            align-items: start;
         }
 
         .pricing-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(30px);
-            padding: 3rem 2rem;
+            padding: 3rem 2.5rem;
             border-radius: 35px;
             box-shadow: var(--shadow-floating);
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            max-width: 500px;
-            margin: 0 auto;
-            width: 100%;
+            transition: all 0.4s var(--animation-curve);
         }
 
-        .pricing-card::before {
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-floating), 0 0 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            border: 2px solid var(--royal-purple);
+        }
+
+        .pricing-card.featured::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 8px;
-            background: var(--gradient-aurora);
+            background: var(--gradient-royal);
         }
 
         .pricing-badge {
             position: absolute;
-            top: -10px;
-            right: 20px;
-            background: var(--gradient-gold);
+            top: -12px;
+            right: 25px;
+            background: var(--gradient-royal);
             color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.85rem;
             font-weight: 700;
             box-shadow: var(--shadow-premium);
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
         .pricing-header h3 {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-weight: 800;
-            text-align: center;
         }
 
         .pricing-subtitle {
             color: var(--charcoal);
-            font-size: clamp(0.95rem, 3vw, 1.1rem);
-            margin-bottom: 2rem;
+            font-size: clamp(1rem, 3vw, 1.1rem);
             opacity: 0.8;
-            text-align: center;
         }
 
         .pricing-price {
-            font-size: clamp(2.5rem, 8vw, 4rem);
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .price-main {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
             font-weight: 900;
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin: 2rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            display: block;
         }
 
-        .price-old {
-            text-decoration: line-through;
+        .price-period {
             color: var(--charcoal);
-            opacity: 0.5;
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.7;
         }
 
         .pricing-features {
             list-style: none;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
         }
 
         .pricing-features li {
-            padding: 0.8rem 0;
+            padding: 1rem 0;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 15px;
             color: var(--charcoal);
-            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            font-size: clamp(1rem, 3vw, 1.1rem);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            text-align: left;
         }
 
         .pricing-features li:hover {
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(99, 102, 241, 0.05);
             transform: translateX(5px);
+            padding-left: 1rem;
+            border-radius: 10px;
         }
 
         .pricing-features i {
-            color: var(--success-color);
-            font-size: 1.1rem;
+            color: var(--royal-purple);
+            font-size: 1.2rem;
             margin-top: 2px;
             flex-shrink: 0;
         }
 
         .pricing-cta {
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             color: white;
-            padding: 16px 20px;
-            border-radius: 30px;
+            padding: 18px 25px;
+            border-radius: 35px;
             text-decoration: none;
             font-weight: 800;
-            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             text-align: center;
             display: block;
             transition: all 0.4s var(--animation-curve);
@@ -1084,57 +1064,50 @@
             box-shadow: var(--shadow-floating);
         }
 
-        .mentorship-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            order: -1;
-        }
-
-        .mentorship-image {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 25px;
-            box-shadow: var(--shadow-floating);
-            transition: all 0.4s ease;
-        }
-
-        .mentorship-image:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
         /* Interactive FAQ Section */
         .faq {
             padding: 6rem 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
+            background: var(--midnight);
             position: relative;
         }
 
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+        }
+
         .faq-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 1rem;
         }
 
         .faq-item {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            margin-bottom: 1.5rem;
             overflow: hidden;
             box-shadow: var(--shadow-crisp);
             transition: all 0.4s var(--animation-curve);
         }
 
         .faq-item:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-premium);
+            border-color: rgba(99, 102, 241, 0.3);
         }
 
         .faq-item.active {
-            border-color: var(--electric-blue);
+            border-color: var(--royal-purple);
             box-shadow: var(--shadow-glow);
         }
 
@@ -1142,18 +1115,18 @@
             width: 100%;
             background: none;
             border: none;
-            padding: 1.5rem;
+            padding: 2rem;
             text-align: left;
-            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             font-weight: 700;
-            color: var(--primary-color);
+            color: white;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             transition: all 0.3s ease;
             position: relative;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .faq-question::before {
@@ -1163,7 +1136,7 @@
             left: 0;
             width: 0;
             height: 100%;
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             opacity: 0.1;
             transition: width 0.3s ease;
         }
@@ -1173,15 +1146,15 @@
         }
 
         .faq-icon {
-            width: 35px;
-            height: 35px;
-            background: var(--gradient-electric);
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-royal);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: all 0.4s var(--animation-curve);
             box-shadow: var(--shadow-crisp);
             flex-shrink: 0;
@@ -1193,10 +1166,10 @@
         }
 
         .faq-answer {
-            padding: 0 1.5rem 1.5rem;
-            color: var(--charcoal);
-            line-height: 1.7;
-            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            padding: 0 2rem 2rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            font-size: clamp(1rem, 3vw, 1.1rem);
             opacity: 0;
             max-height: 0;
             overflow: hidden;
@@ -1205,7 +1178,7 @@
 
         .faq-item.active .faq-answer {
             opacity: 1;
-            max-height: 500px;
+            max-height: 600px;
             padding-top: 0.5rem;
         }
 
@@ -1213,7 +1186,7 @@
         .footer {
             background: var(--gradient-midnight);
             color: white;
-            padding: 4rem 0 2rem;
+            padding: 5rem 0 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -1226,8 +1199,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
         }
 
         .footer-container {
@@ -1249,72 +1222,74 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 1.5rem;
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            gap: 18px;
+            margin-bottom: 2rem;
+            font-size: clamp(1.4rem, 4vw, 2rem);
             font-weight: 800;
         }
 
         .footer-logo .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-gold);
-            border-radius: 15px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-royal);
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             box-shadow: var(--shadow-glow);
         }
 
         .footer-description {
-            font-size: clamp(1rem, 3vw, 1.1rem);
-            line-height: 1.6;
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
+            line-height: 1.7;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
-            max-width: 600px;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
-            border-radius: 15px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .social-link:hover {
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             transform: translateY(-5px) scale(1.1);
             box-shadow: var(--shadow-glow);
         }
 
         .footer-section {
             text-align: center;
+            margin-bottom: 2rem;
         }
 
         .footer-section h3 {
-            font-size: clamp(1.2rem, 4vw, 1.4rem);
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
             margin-bottom: 1.5rem;
-            color: var(--gold);
+            color: var(--royal-purple);
             font-weight: 700;
             position: relative;
         }
@@ -1322,12 +1297,12 @@
         .footer-section h3::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 2px;
-            background: var(--gradient-electric);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-gold);
         }
 
         .footer-section ul {
@@ -1335,27 +1310,27 @@
         }
 
         .footer-section li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .footer-section a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: clamp(0.9rem, 3vw, 1rem);
+            font-size: clamp(1rem, 3vw, 1.1rem);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .footer-section a:hover {
-            color: var(--electric-blue);
+            color: var(--gold);
             transform: translateY(-2px);
         }
 
         .footer-section a i {
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .footer-bottom {
@@ -1368,16 +1343,16 @@
         .disclaimer {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
-            padding: 1.5rem;
-            border-radius: 15px;
+            padding: 2rem;
+            border-radius: 20px;
             margin-bottom: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .disclaimer p {
             color: rgba(255, 255, 255, 0.7);
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-            line-height: 1.6;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            line-height: 1.7;
             margin: 0;
             text-align: center;
         }
@@ -1385,27 +1360,27 @@
         .copyright {
             text-align: center;
             color: rgba(255, 255, 255, 0.6);
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         /* Advanced WhatsApp Widget */
         .whatsapp-widget {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             z-index: 1000;
         }
 
         .whatsapp-button {
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             background: #25d366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.8rem;
+            font-size: 2rem;
             text-decoration: none;
             box-shadow: var(--shadow-floating);
             transition: all 0.3s ease;
@@ -1416,10 +1391,10 @@
         .whatsapp-button::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
             background: #25d366;
             border-radius: 50%;
             z-index: -1;
@@ -1428,7 +1403,7 @@
 
         .whatsapp-button:hover {
             transform: scale(1.15);
-            box-shadow: var(--shadow-floating), 0 0 30px rgba(37, 211, 102, 0.6);
+            box-shadow: var(--shadow-floating), 0 0 40px rgba(37, 211, 102, 0.6);
         }
 
         @keyframes whatsappPulse {
@@ -1460,7 +1435,7 @@
                 gap: 1.5rem;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
                 box-shadow: var(--shadow-floating);
-                border-radius: 0 0 20px 20px;
+                border-radius: 0 0 25px 25px;
             }
 
             .nav-menu.active {
@@ -1488,31 +1463,36 @@
 
             .hero-container {
                 padding: 0 1rem;
-                gap: 2rem;
+                gap: 2.5rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
-                max-width: 300px;
-                margin: 0 auto 2rem;
+                max-width: 320px;
+                margin: 0 auto 2.5rem;
             }
 
             .btn-hero-primary,
             .btn-hero-secondary {
                 width: 100%;
-                max-width: 280px;
+                max-width: 300px;
             }
 
             .hero-stats {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
+                gap: 1.5rem;
                 margin-top: 2rem;
             }
 
+            .hero-banner {
+                max-width: 100%;
+                height: 300px;
+            }
+
             .stats {
-                padding: 3rem 0;
+                padding: 4rem 0;
             }
 
             .stats-container {
@@ -1521,40 +1501,32 @@
                 padding: 0 1rem;
             }
 
-            .about {
-                padding: 4rem 0;
-            }
-
-            .about-container {
-                padding: 0 1rem;
-                gap: 2rem;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .video-container iframe {
-                height: 250px;
-            }
-
             .services {
                 padding: 4rem 0;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
                 padding: 0 1rem;
             }
 
             .service-card {
-                padding: 2rem 1.5rem;
+                padding: 2.5rem 2rem;
             }
 
-            .mentorship {
+            .pricing {
                 padding: 4rem 0;
+            }
+
+            .pricing-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .pricing-card.featured {
+                transform: none;
             }
 
             .faq {
@@ -1562,39 +1534,27 @@
             }
 
             .footer {
-                padding: 3rem 0 2rem;
+                padding: 4rem 0 2rem;
             }
 
             .footer-container {
-                gap: 2rem;
+                gap: 2.5rem;
                 padding: 0 1rem;
             }
         }
 
         @media (max-width: 480px) {
-            .nav-container {
-                padding: 0 0.5rem;
-            }
-
-            .hero {
-                padding-top: 80px;
-            }
-
-            .hero-container {
-                padding: 0 0.5rem;
-            }
-
             .hero-stats {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 0.5rem;
+                gap: 1rem;
             }
 
             .hero-stat-number {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             .hero-stat-label {
-                font-size: 0.7rem;
+                font-size: 0.8rem;
             }
 
             .stats-container {
@@ -1602,23 +1562,14 @@
                 padding: 0 0.5rem;
             }
 
-            .section-header {
-                padding: 0 0.5rem;
-            }
-
+            .pricing-container,
             .services-grid,
             .faq-container {
                 padding: 0 0.5rem;
             }
 
             .pricing-card {
-                padding: 2rem 1rem;
-                margin: 0 0.5rem;
-            }
-
-            .pricing-features li {
-                font-size: 0.9rem;
-                padding: 0.6rem 0;
+                padding: 2rem 1.5rem;
             }
 
             .footer-container {
@@ -1626,34 +1577,14 @@
             }
 
             .whatsapp-widget {
-                bottom: 15px;
-                right: 15px;
+                bottom: 20px;
+                right: 20px;
             }
 
             .whatsapp-button {
-                width: 55px;
-                height: 55px;
-                font-size: 1.6rem;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .hero-buttons {
-                max-width: 250px;
-            }
-
-            .btn-hero-primary,
-            .btn-hero-secondary {
-                padding: 14px 20px;
-                font-size: 0.9rem;
-            }
-
-            .pricing-card {
-                margin: 0;
-            }
-
-            .footer-section a {
-                font-size: 0.85rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
             }
         }
 
@@ -1661,7 +1592,7 @@
         @media (min-width: 769px) and (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+                gap: 4rem;
             }
 
             .hero-visual {
@@ -1681,20 +1612,6 @@
                 justify-content: flex-start;
             }
 
-            .about-container {
-                grid-template-columns: 1fr 1fr;
-                text-align: left;
-            }
-
-            .mentorship-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
-            }
-
-            .mentorship-visual {
-                order: 1;
-            }
-
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
                 text-align: left;
@@ -1703,9 +1620,7 @@
 
         /* Large Desktop Optimization */
         @media (min-width: 1400px) {
-            .hero-container,
-            .about-container,
-            .mentorship-container {
+            .hero-container {
                 grid-template-columns: 1fr 1fr;
                 gap: 6rem;
             }
@@ -1723,13 +1638,48 @@
                 justify-content: flex-start;
             }
 
-            .about-container {
-                text-align: left;
-            }
-
             .footer-container {
                 grid-template-columns: 2fr 1fr 1fr 1fr;
                 text-align: left;
+            }
+        }
+
+        /* Advanced Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
         }
 
@@ -1762,67 +1712,6 @@
             }
         }
 
-        /* Advanced Animations */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
@@ -1830,7 +1719,7 @@
 
         /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-track {
@@ -1838,31 +1727,18 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--gradient-gold);
-            border-radius: 3px;
+            background: var(--gradient-royal);
+            border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--gradient-electric);
+            background: var(--gradient-gold);
         }
 
         /* Selection styling */
         ::selection {
-            background: var(--gradient-gold);
+            background: var(--gradient-royal);
             color: white;
-        }
-
-        /* Loading Screen Responsiveness */
-        @media (max-width: 480px) {
-            .loader-logo {
-                width: 80px;
-                height: 80px;
-                font-size: 2rem;
-            }
-
-            .loader-text {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
@@ -1877,7 +1753,7 @@
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-content">
-            <div class="loader-logo">FX</div>
+            <div class="loader-logo">CX</div>
             <div class="loader-text">Loading Elite Experience...</div>
         </div>
     </div>
@@ -1886,15 +1762,15 @@
     <header class="header" id="header">
         <nav class="nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">FX</div>
-                <span>Flair<span style="color: var(--gold);">FX</span> Academy</span>
+                <div class="logo-icon">CX</div>
+                <span>Classy<span style="color: var(--gold);">FX</span> Academy</span>
             </a>
             
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#mentorship" class="nav-link">Mentorship</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="https://selar.com/12y18k" class="nav-cta" target="_blank">Join Elite Program</a></li>
             </ul>
@@ -1913,41 +1789,49 @@
             <div class="particle"></div>
             <div class="particle"></div>
             <div class="particle"></div>
+            <div class="particle"></div>
         </div>
         
         <div class="hero-container">
             <div class="hero-visual">
-                <div class="hero-image-container">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 400'><defs><linearGradient id='heroGrad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23667eea'/><stop offset='50%' style='stop-color:%23764ba2'/><stop offset='100%' style='stop-color:%23f093fb'/></linearGradient></defs><rect width='500' height='400' fill='url(%23heroGrad)' rx='25'/><circle cx='150' cy='120' r='40' fill='%23ffd700' opacity='0.8'/><circle cx='350' cy='120' r='35' fill='%2300d4ff' opacity='0.8'/><rect x='100' y='200' width='300' height='120' fill='rgba(255,255,255,0.2)' rx='15'/><text x='250' y='250' text-anchor='middle' dy='.3em' font-family='Arial' font-size='20' fill='white' font-weight='bold'>LIVE TRADING</text><text x='250' y='280' text-anchor='middle' dy='.3em' font-family='Arial' font-size='16' fill='white'>Professional Sessions</text><line x1='80' y1='350' x2='420' y2='350' stroke='%23ffd700' stroke-width='3'/><circle cx='120' r='8' cy='350' fill='%2300d4ff'/><circle cx='200' r='6' cy='340' fill='%23ffd700'/><circle cx='300' r='10' cy='330' fill='%2300d4ff'/><circle cx='380' r='7' cy='345' fill='%23ffd700'/></svg>" alt="Elite Trading Experience" class="hero-image">
+                <div class="hero-banner">
+                    <div class="banner-logo">CX</div>
+                    <h2 class="banner-title">ClassyFX Academy</h2>
+                    <p class="banner-subtitle">Elite Forex Trading Mastery</p>
+                    <div class="banner-features">
+                        <span class="banner-feature">VIP Signals</span>
+                        <span class="banner-feature">Live Mentorship</span>
+                        <span class="banner-feature">Expert Training</span>
+                    </div>
                 </div>
             </div>
 
             <div class="hero-content">
                 <h1>Master the Art of <span class="highlight">Elite Forex Trading</span> with <span class="accent">Professional Precision</span></h1>
-                <p class="hero-subtitle">Transform from a struggling trader to a consistent profit maker with our proven mentorship program. Join the exclusive 10% of successful traders who dominate the markets.</p>
+                <p class="hero-subtitle">Transform from a struggling trader to a consistent profit maker with our comprehensive VIP signals, live mentorship, and proven strategies. Join the exclusive 10% of successful traders.</p>
                 
                 <div class="hero-buttons">
-                    <a href="#mentorship" class="btn-hero-primary">
+                    <a href="#pricing" class="btn-hero-primary">
                         Start Your Elite Journey
                         <i class="fas fa-rocket"></i>
                     </a>
                     <a href="#about" class="btn-hero-secondary">
                         <i class="fas fa-play"></i>
-                        Watch Our Story
+                        Explore Our Programs
                     </a>
                 </div>
 
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <span class="hero-stat-number">500+</span>
+                        <span class="hero-stat-number">1000+</span>
                         <span class="hero-stat-label">Elite Students</span>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">85%</span>
+                        <span class="hero-stat-number">90%</span>
                         <span class="hero-stat-label">Success Rate</span>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">$2M+</span>
+                        <span class="hero-stat-number">$5M+</span>
                         <span class="hero-stat-label">Student Profits</span>
                     </div>
                 </div>
@@ -1962,21 +1846,21 @@
                 <div class="stat-icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <span class="stat-number">500+</span>
+                <span class="stat-number">1000+</span>
                 <span class="stat-label">Elite Students Trained</span>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <span class="stat-number">85%</span>
+                <span class="stat-number">90%</span>
                 <span class="stat-label">Success Rate Achieved</span>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">
                     <i class="fas fa-clock"></i>
                 </div>
-                <span class="stat-number">3+</span>
+                <span class="stat-number">5+</span>
                 <span class="stat-label">Years of Excellence</span>
             </div>
             <div class="stat-card">
@@ -1990,46 +1874,10 @@
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-content">
-                <h2>Welcome to Elite Forex Mastery</h2>
-                <p><strong>FlairFX Academy</strong> is an exclusive mentorship program designed to elevate traders from all levels to elite status. We focus on developing systematic approaches to trading, helping you break free from emotional, inconsistent patterns that plague 90% of traders.</p>
-                
-                <p>Our academy operates on three fundamental pillars: advanced psychology mastery, precision strategy execution, and exclusive community networking. We don't just provide signals—we forge independent, profitable trading professionals.</p>
-                
-                <div class="about-features">
-                    <div class="feature-item">
-                        <i class="fas fa-video feature-icon"></i>
-                        <span class="feature-text">Live Trading Sessions</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-brain feature-icon"></i>
-                        <span class="feature-text">Advanced Psychology Training</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-shield-alt feature-icon"></i>
-                        <span class="feature-text">Risk Management Systems</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-trophy feature-icon"></i>
-                        <span class="feature-text">Proven Strategies</span>
-                    </div>
-                </div>
-            </div>
-            <div class="about-visual">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/8gksdt02GvQ" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services" id="about">
         <div class="section-header">
-            <h2>Our Elite Foundation</h2>
-            <p>Built on excellence, integrity, and uncompromising results that separate winners from the rest</p>
+            <h2>Welcome to Elite Trading Excellence</h2>
+            <p>Built on precision, innovation, and uncompromising results that separate winners from the rest</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -2043,7 +1891,7 @@
                 <div class="service-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <h3>Precision Consistency</h3>
+                <h3>Precision Trading</h3>
                 <p>Build systematic trading approaches through proven routines, advanced risk control, and flawless strategy execution that compound wealth over time.</p>
             </div>
             <div class="service-card">
@@ -2056,70 +1904,166 @@
         </div>
     </section>
 
-    <!-- Mentorship Section -->
-    <section class="mentorship" id="mentorship">
-        <div class="mentorship-container">
+    <!-- Premium Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <h2 style="color: var(--primary-color);">Join The Winning Team</h2>
+            <p style="color: var(--charcoal);">Choose your path to forex trading excellence with our comprehensive programs</p>
+            <div style="text-align: center; margin: 2rem 0;">
+                <span style="font-size: 2rem;">⭐ ⭐ ⭐ ⭐ ⭐</span>
+            </div>
+        </div>
+        
+        <div class="pricing-container">
+            <!-- VIP Signals Card -->
             <div class="pricing-card">
-                <div class="pricing-badge">Limited Time</div>
                 <div class="pricing-header">
-                    <h3>Elite Mentorship Program</h3>
-                    <p class="pricing-subtitle">Everything you need to join the profitable 10% of forex traders</p>
+                    <h3>VIP Signals</h3>
+                    <p class="pricing-subtitle">Professional trading signals delivered directly to you</p>
                 </div>
                 
-                <div class="pricing-price">
-                    <span class="price-old">$49</span>
-                    <span>$29</span>
+                <div class="pricing-features">
+                    <li><i class="fas fa-check"></i> <strong>Monthly = $50</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>Yearly = $100</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>Lifetime = $150</strong></li>
                 </div>
 
                 <ul class="pricing-features">
-                    <li><i class="fas fa-check"></i> Bi-Weekly Live Trading Sessions</li>
-                    <li><i class="fas fa-check"></i> Exclusive Mentorship Community</li>
-                    <li><i class="fas fa-check"></i> Complete Session Replay Library</li>
-                    <li><i class="fas fa-check"></i> Professional Market Analysis</li>
-                    <li><i class="fas fa-check"></i> Complete Strategy Suite (Intraday & Swing)</li>
-                    <li><i class="fas fa-check"></i> Advanced Psychology & Risk Training</li>
-                    <li><i class="fas fa-check"></i> Prop Firm Success Blueprint</li>
-                    <li><i class="fas fa-check"></i> Lifetime Elite Access</li>
-                    <li><i class="fas fa-check"></i> Personal Mentorship Support</li>
+                    <li><i class="fas fa-signal"></i> High-precision trading signals</li>
+                    <li><i class="fas fa-clock"></i> Real-time market alerts</li>
+                    <li><i class="fas fa-chart-area"></i> Detailed entry/exit points</li>
+                    <li><i class="fas fa-shield-alt"></i> Risk management guidance</li>
+                    <li><i class="fas fa-mobile-alt"></i> Mobile notifications</li>
                 </ul>
 
                 <a href="https://selar.com/12y18k" class="pricing-cta" target="_blank">
-                    Secure My Elite Access Now!
+                    Get VIP Signals Now
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Mentorship Card -->
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3>Elite Mentorship</h3>
+                    <p class="pricing-subtitle">Complete trading education with personal guidance</p>
+                </div>
+                
+                <div class="pricing-features">
+                    <li><i class="fas fa-check"></i> <strong>Beginner to Expert = $200</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>Intermediate to Expert = $100</strong></li>
+                </div>
+
+                <ul class="pricing-features">
+                    <li><i class="fas fa-graduation-cap"></i> Comprehensive trading education</li>
+                    <li><i class="fas fa-user-tie"></i> Personal mentor guidance</li>
+                    <li><i class="fas fa-video"></i> Live trading sessions</li>
+                    <li><i class="fas fa-book-open"></i> Complete strategy library</li>
+                    <li><i class="fas fa-users"></i> Exclusive community access</li>
+                    <li><i class="fas fa-headset"></i> Priority support</li>
+                </ul>
+
+                <a href="https://selar.com/12y18k" class="pricing-cta" target="_blank">
+                    Start Elite Mentorship
                     <i class="fas fa-crown"></i>
                 </a>
             </div>
 
-            <div class="mentorship-visual">
-                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 450 350'><defs><linearGradient id='mentorshipGrad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%230f172a'/><stop offset='50%' style='stop-color:%231e293b'/><stop offset='100%' style='stop-color:%23334155'/></linearGradient></defs><rect width='450' height='350' fill='url(%23mentorshipGrad)' rx='25'/><circle cx='100' cy='80' r='30' fill='%23ffd700' opacity='0.9'/><circle cx='350' cy='80' r='25' fill='%2300d4ff' opacity='0.9'/><rect x='75' y='150' width='300' height='120' fill='rgba(255,255,255,0.1)' rx='15'/><text x='225' y='190' text-anchor='middle' dy='.3em' font-family='Arial' font-size='18' fill='white' font-weight='bold'>ELITE MENTORSHIP</text><text x='225' y='215' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23ffd700'>Live Sessions • Community • Success</text><rect x='100' y='240' width='80' height='20' fill='%2300d4ff' rx='10'/><rect x='200' y='240' width='60' height='20' fill='%23ffd700' rx='10'/><rect x='280' y='240' width='70' height='20' fill='%2300d4ff' rx='10'/><circle cx='120' cy='320' r='8' fill='%23ffd700'/><circle cx='225' cy='315' r='6' fill='%2300d4ff'/><circle cx='330' cy='320' r='7' fill='%23ffd700'/></svg>" alt="Elite Mentorship Program" class="mentorship-image">
+            <!-- Combo Packages Card -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Ultimate Packages</h3>
+                    <p class="pricing-subtitle">Maximum value combinations for serious traders</p>
+                </div>
+                
+                <div class="pricing-features">
+                    <li><i class="fas fa-check"></i> <strong>Intermediate + 1 Year Signals = $150</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>Intermediate + Lifetime Signals = $200</strong></li>
+                </div>
+
+                <ul class="pricing-features">
+                    <li><i class="fas fa-infinity"></i> Complete trading solution</li>
+                    <li><i class="fas fa-rocket"></i> Accelerated learning path</li>
+                    <li><i class="fas fa-gem"></i> Premium content access</li>
+                    <li><i class="fas fa-trophy"></i> Advanced strategies</li>
+                    <li><i class="fas fa-star"></i> VIP community status</li>
+                    <li><i class="fas fa-lightning-bolt"></i> Fast-track to profitability</li>
+                </ul>
+
+                <a href="https://selar.com/12y18k" class="pricing-cta" target="_blank">
+                    Get Ultimate Package
+                    <i class="fas fa-fire"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- Interactive FAQ Section -->
     <section class="faq" id="faq">
         <div class="section-header">
             <h2>Frequently Asked Questions</h2>
-            <p>Get answers to the most common questions about our elite mentorship program</p>
+            <p>Get answers to the most common questions about our elite programs</p>
         </div>
         
         <div class="faq-container">
             <div class="faq-item">
                 <button class="faq-question">
-                    <span>Is this a once-off mentorship program?</span>
+                    <span>What's the difference between VIP Signals and Mentorship?</span>
                     <div class="faq-icon"><i class="fas fa-plus"></i></div>
                 </button>
                 <div class="faq-answer">
-                    No, this is not a once-off mentorship. Once you join our elite program, you have lifetime access to all mentorship content, community, and ongoing sessions. Your investment grows with you throughout your trading journey.
+                    VIP Signals provide you with ready-to-trade signals with entry/exit points, while Mentorship teaches you how to analyze markets and create your own trading strategies. Mentorship includes education, live sessions, and personal guidance to make you an independent trader.
                 </div>
             </div>
 
             <div class="faq-item">
                 <button class="faq-question">
-                    <span>How long does the elite mentorship last?</span>
+                    <span>Which mentorship level should I choose?</span>
                     <div class="faq-icon"><i class="fas fa-plus"></i></div>
                 </button>
                 <div class="faq-answer">
-                    The mentorship provides lifetime access. You pay once and receive ongoing value, continuous learning opportunities, and community support for as long as the program exists.
+                    Choose "Beginner to Expert" ($200) if you're completely new to forex trading. Choose "Intermediate to Expert" ($100) if you have basic knowledge but want to master advanced strategies and psychology.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Are the Ultimate Packages worth it?</span>
+                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-answer">
+                    Absolutely! The Ultimate Packages combine mentorship with signals, giving you both education and ready-to-trade opportunities. The "Intermediate + Lifetime Signals" package ($200) offers exceptional long-term value.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How quickly will I see results?</span>
+                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-answer">
+                    With VIP Signals, you can start trading immediately. With mentorship, most students see significant improvement within 30-60 days of consistent learning and practice. Remember, trading is a skill that develops over time.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you offer any guarantees?</span>
+                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-answer">
+                    We guarantee quality education and support, but trading results depend on your dedication, risk management, and market conditions. We provide the tools and knowledge - your success depends on applying them consistently.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I upgrade my package later?</span>
+                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-answer">
+                    Yes! You can upgrade at any time by paying the difference. For example, if you start with VIP Signals Monthly ($50) and want to upgrade to Intermediate Mentorship, you'd pay the difference.
                 </div>
             </div>
 
@@ -2129,17 +2073,7 @@
                     <div class="faq-icon"><i class="fas fa-plus"></i></div>
                 </button>
                 <div class="faq-answer">
-                    We specialize in SMC (Smart Money Concepts) trading with a focus on swing trading methodologies. You'll learn to apply institutional-grade strategies to identify and execute high-probability market setups with precision.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>What's included in the complete program?</span>
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </button>
-                <div class="faq-answer">
-                    The elite mentorship includes comprehensive intraday and swing trading strategies, specialized gold trading techniques, bi-weekly live sessions every Wednesday and Sunday, complete market analysis, psychology training, and exclusive community access.
+                    We specialize in SMC (Smart Money Concepts) trading with focus on swing trading methodologies. You'll learn institutional-grade strategies, market structure analysis, and advanced risk management techniques.
                 </div>
             </div>
 
@@ -2149,37 +2083,7 @@
                     <div class="faq-icon"><i class="fas fa-plus"></i></div>
                 </button>
                 <div class="faq-answer">
-                    Absolutely. Our program is designed to take you from complete beginner to profitable trader, while also providing advanced insights for experienced traders. Everything is explained clearly with comprehensive support throughout your journey.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Do I get personal mentorship and support?</span>
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </button>
-                <div class="faq-answer">
-                    Yes, you'll receive direct mentorship support through our private community, live Q&A sessions, and dedicated mentorship guidance. We're committed to your success and provide ongoing support.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Can I access this program from anywhere in the world?</span>
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </button>
-                <div class="faq-answer">
-                    Yes, our elite mentorship is completely online and accessible to ambitious traders worldwide. All you need is internet access and the determination to succeed in forex trading.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>How do I access the program after joining?</span>
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </button>
-                <div class="faq-answer">
-                    Once your payment is confirmed, you'll receive immediate email access with your login credentials and step-by-step instructions to join our exclusive platform and community.
+                    Absolutely! Our "Beginner to Expert" mentorship starts from the basics and builds up gradually. We also recommend starting with VIP Signals to see professional trades in action while you learn.
                 </div>
             </div>
         </div>
@@ -2190,10 +2094,10 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <div class="logo-icon">FX</div>
-                    <span>Flair<span style="color: var(--gold);">FX</span> Academy</span>
+                    <div class="logo-icon">CX</div>
+                    <span>Classy<span style="color: var(--gold);">FX</span> Academy</span>
                 </div>
-                <p class="footer-description">Master the art of elite forex trading with professional guidance, proven strategies, and an exclusive community of successful traders.</p>
+                <p class="footer-description">Master the art of elite forex trading with professional VIP signals, comprehensive mentorship, and proven strategies from our experienced team of trading professionals.</p>
                 <div class="social-links">
                     <a href="https://youtube.com/@flairfx?si=M2jDtJjC1FW7m27y" target="_blank" class="social-link" aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
@@ -2216,7 +2120,7 @@
                     <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
                     <li><a href="#services"><i class="fas fa-cog"></i> Services</a></li>
-                    <li><a href="#mentorship"><i class="fas fa-crown"></i> Elite Mentorship</a></li>
+                    <li><a href="#pricing"><i class="fas fa-crown"></i> Pricing</a></li>
                     <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
                 </ul>
             </div>
@@ -2231,29 +2135,29 @@
             </div>
 
             <div class="footer-section">
-                <h3>Trading Resources</h3>
+                <h3>Trading Programs</h3>
                 <ul>
-                    <li><a href="#"><i class="fas fa-book"></i> Elite Trading Books</a></li>
-                    <li><a href="#"><i class="fas fa-chart-bar"></i> Market Analysis</a></li>
-                    <li><a href="#"><i class="fas fa-video"></i> Educational Videos</a></li>
-                    <li><a href="#"><i class="fas fa-tools"></i> Professional Tools</a></li>
+                    <li><a href="#pricing"><i class="fas fa-signal"></i> VIP Signals</a></li>
+                    <li><a href="#pricing"><i class="fas fa-graduation-cap"></i> Elite Mentorship</a></li>
+                    <li><a href="#pricing"><i class="fas fa-gem"></i> Ultimate Packages</a></li>
+                    <li><a href="#pricing"><i class="fas fa-users"></i> Community Access</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div class="disclaimer">
-                <p><strong>DISCLAIMER:</strong> All information provided on this website is for educational purposes only and does not constitute financial or investment advice. FlairFX Academy operates as an educational platform and does not function as a broker, accept deposits, or provide access to live trading accounts. Our elite training programs are designed to enhance your trading knowledge and skills in a professional learning environment.</p>
+                <p><strong>DISCLAIMER:</strong> All information provided on this website is for educational purposes only and does not constitute financial or investment advice. ClassyFX Academy operates as an educational platform and does not function as a broker, accept deposits, or provide access to live trading accounts. Our elite training programs and VIP signals are designed to enhance your trading knowledge and skills in a professional learning environment. Trading involves substantial risk and may not be suitable for all investors.</p>
             </div>
             <div class="copyright">
-                <p>Copyright © 2025 FlairFX Academy. All rights reserved. | Developed by MJL Company(Whatsapp us: +250791725380)</p>
+                <p>Copyright © 2025 ClassyFX Academy. All rights reserved. | Developed by MJL Company (WhatsApp: +250791725380)</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
-        <a href="https://api.whatsapp.com/send?phone=27614942187&text=Hi! I'm interested in joining your elite forex mentorship program. Can you provide more details?" target="_blank" class="whatsapp-button" aria-label="Contact us on WhatsApp">
+        <a href="https://api.whatsapp.com/send?phone=27614942187&text=Hi! I'm interested in joining ClassyFX Academy. Can you provide more details about your VIP signals and mentorship programs?" target="_blank" class="whatsapp-button" aria-label="Contact us on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -2313,8 +2217,7 @@
                     cursor.style.opacity = '0';
                 });
 
-                // Cursor interactions
-                document.querySelectorAll('a, button, .service-card, .stat-card').forEach(el => {
+                document.querySelectorAll('a, button, .service-card, .stat-card, .pricing-card').forEach(el => {
                     el.addEventListener('mouseenter', () => {
                         cursor.classList.add('active');
                     });
@@ -2434,38 +2337,23 @@
                     // Add staggered animation for grid items
                     if (entry.target.parentElement && 
                         (entry.target.parentElement.classList.contains('services-grid') || 
-                         entry.target.parentElement.classList.contains('stats-container'))) {
+                         entry.target.parentElement.classList.contains('stats-container') ||
+                         entry.target.parentElement.classList.contains('pricing-container'))) {
                         const siblings = Array.from(entry.target.parentElement.children);
                         const index = siblings.indexOf(entry.target);
-                        entry.target.style.animationDelay = (index * 0.1) + 's';
-                        entry.target.style.animation = 'slideInUp 0.6s ease forwards';
+                        entry.target.style.animationDelay = (index * 0.15) + 's';
+                        entry.target.style.animation = 'slideInUp 0.8s ease forwards';
                     }
                 }
             });
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.service-card, .stat-card, .faq-item, .about-content, .pricing-card').forEach(el => {
+        document.querySelectorAll('.service-card, .stat-card, .faq-item, .pricing-card').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(30px) scale(0.95)';
-            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            el.style.transform = 'translateY(40px) scale(0.95)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
             observer.observe(el);
-        });
-
-        // Parallax Effect for Hero Section (Reduced for mobile performance)
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    const scrolled = window.pageYOffset;
-                    const parallax = document.querySelector('.hero-particles');
-                    if (parallax && window.innerWidth > 768) {
-                        parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
-                    }
-                    ticking = false;
-                });
-                ticking = true;
-            }
         });
 
         // Dynamic Number Counter for Stats
@@ -2479,8 +2367,17 @@
                     current = target;
                     clearInterval(timer);
                 }
-                const suffix = target >= 1000 ? '+' : (target <= 100 && target > 10 ? '%' : '+');
-                element.textContent = Math.floor(current) + suffix;
+                
+                let suffix = '+';
+                if (target <= 100 && target > 10) suffix = '%';
+                if (element.textContent.includes('24/7')) {
+                    element.textContent = '24/7';
+                    return;
+                } else if (element.textContent.includes('M+')) {
+                    element.textContent = ' + Math.floor(current) + 'M+';
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
             }, 25);
         }
 
@@ -2505,6 +2402,22 @@
         const heroSection = document.querySelector('.hero');
         if (statsSection) statsObserver.observe(statsSection);
         if (heroSection) statsObserver.observe(heroSection);
+
+        // Parallax Effect for Hero Section (Reduced for mobile performance)
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const parallax = document.querySelector('.hero-particles');
+                    if (parallax && window.innerWidth > 768) {
+                        parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
 
         // Enhanced Error Handling
         window.addEventListener('error', function(e) {
@@ -2531,23 +2444,11 @@
             }
         });
 
-        // Add focus management for accessibility
-        document.querySelectorAll('.nav-link, .faq-question, .pricing-cta').forEach(el => {
-            el.addEventListener('focus', function() {
-                this.style.outline = '2px solid var(--electric-blue)';
-                this.style.outlineOffset = '2px';
-            });
-            el.addEventListener('blur', function() {
-                this.style.outline = 'none';
-            });
-        });
-
         // Performance optimization for mobile
         let resizeTimer;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
-                // Refresh animations on resize
                 const cursor = document.getElementById('interactiveCursor');
                 if (cursor && window.innerWidth <= 768) {
                     cursor.style.display = 'none';
@@ -2557,113 +2458,18 @@
             }, 250);
         });
 
-        // Improved touch handling for mobile
-        let touchStartY = 0;
-        let touchEndY = 0;
-
-        document.addEventListener('touchstart', function(e) {
-            touchStartY = e.changedTouches[0].screenY;
-        }, { passive: true });
-
-        document.addEventListener('touchend', function(e) {
-            touchEndY = e.changedTouches[0].screenY;
-            // Add any touch-specific functionality here if needed
-        }, { passive: true });
-
-        // Optimize animations for mobile performance
-        function isMobile() {
-            return window.innerWidth <= 768;
-        }
-
         // Reduce particle count on mobile
-        if (isMobile()) {
+        if (window.innerWidth <= 768) {
             document.querySelectorAll('.particle').forEach((particle, index) => {
-                if (index > 2) {
+                if (index > 3) {
                     particle.style.display = 'none';
                 }
             });
         }
 
-        // Handle orientation changes
-        window.addEventListener('orientationchange', function() {
-            setTimeout(function() {
-                // Recalculate dimensions after orientation change
-                window.scrollTo(0, window.scrollY);
-            }, 500);
-        });
-
-        // Lazy loading for images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        if (img.dataset.src) {
-                            img.src = img.dataset.src;
-                            img.removeAttribute('data-src');
-                            imageObserver.unobserve(img);
-                        }
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Debounced scroll handler for better performance
-        let scrollTimer;
-        const debouncedScrollHandler = function() {
-            clearTimeout(scrollTimer);
-            scrollTimer = setTimeout(function() {
-                // Handle scroll-dependent functionality
-                const scrolled = window.pageYOffset;
-                
-                // Update header
-                const header = document.getElementById('header');
-                if (header) {
-                    if (scrolled > 50) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                }
-
-                // Update progress bar
-                const scrollProgress = document.getElementById('scrollProgress');
-                if (scrollProgress) {
-                    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                    const scrollPercent = scrollHeight > 0 ? (scrolled / scrollHeight) * 100 : 0;
-                    scrollProgress.style.width = Math.min(scrollPercent, 100) + '%';
-                }
-
-                // Parallax for desktop only
-                if (window.innerWidth > 768) {
-                    const parallax = document.querySelector('.hero-particles');
-                    if (parallax) {
-                        parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
-                    }
-                }
-            }, 10);
-        };
-
-        window.addEventListener('scroll', debouncedScrollHandler, { passive: true });
-
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
-            // Set initial states
             document.body.style.visibility = 'visible';
-            
-            // Preload critical resources
-            const criticalImages = document.querySelectorAll('img');
-            criticalImages.forEach(img => {
-                if (img.src && !img.complete) {
-                    img.addEventListener('load', function() {
-                        this.style.opacity = '1';
-                    });
-                }
-            });
         });
     </script>
 </body>
